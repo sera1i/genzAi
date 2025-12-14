@@ -1,73 +1,148 @@
-# 💘 AI Wingman (The Rizz App)
 
-**Your personal AI Copilot for dating, networking, and social survival.**
+# 🧞 genzAi: The AI Wingman
 
-> *"Don't just text. Perform."*
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![API](https://img.shields.io/badge/Powered%20By-Google%20Gemini-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-This Python-based tool acts as a "Digital Wingman" for introverts. It sits quietly in the background, reads the text you copy to your clipboard, and uses Google's advanced **Gemini LLM** to generate the perfect reply instantly.
+> **"Don't just text. Perform."**
 
-Whether you need a simple reply, a savage roast, or a long-term conversation strategy, the Wingman has your back.
+**genzAi** is a Python-based "Digital Copilot" designed for introverts, dating app warriors, and anyone who runs out of things to say. It sits quietly in the background, reads the text you copy to your clipboard, and uses **Google's Gemini LLM** to generate the perfect reply instantly.
+
+Whether you need to be charming, savage, or just friendly, genzAi has a mode for it.
 
 ---
 
-## 📂 Project Versions
+## 📂 Project Structure
 
-This repository contains three versions of the Wingman, each smarter than the last:
+This repository contains the evolution of the Wingman bot. You can use whichever version suits your needs:
 
-| Version | File Name | Description | Best For |
+| File Name | Version | Description | Best For |
 | :--- | :--- | :--- | :--- |
-| **V1.0** | `wingman.py` | **The Basic Bot.** Single hotkey (`Alt+G`). Generates one generic "helpful" reply. | Testing if it works. Simple replies. |
-| **V2.0** | `wingman_v2.py` | **The Mood Switcher.** Adds personas (Friendly, Flirty, Roast) via different hotkeys. | Dating apps, group chats, banter. |
-| **V3.0** | `wingman_v3_memory.py` | **The Memory Master.** Remembers conversation history for context-aware replies. | **Deep conversations**, arguments, long chats. |
+| `wingman.py` | **V1.0 (Basic)** | Single hotkey (`Alt+G`). Generates one generic "helpful" reply. | Quick testing. |
+| `wingman_v2.py` | **V2.0 (Moods)** | Adds **Personas** (Friendly, Flirty, Roast) via specific hotkeys. | Dating apps, group chats. |
+| `wingman_v3_memory.py` | **V3.0 (Memory)** | **The Ultimate Version.** Remembers conversation history for context-aware replies. | **Deep conversations**, long chats. |
 
 ---
 
 ## 🚀 Features
 
-* **Invisible Copilot:** Runs in the background; works on **WhatsApp Web, Instagram, Tinder, Discord, etc.**
-* **Privacy First:** You control the send button. The AI only suggests; you choose to paste.
-* **Powered by Gemini:** Uses Google's latest high-speed, creative AI models (`gemini-2.5-flash` / `gemini-1.5-flash`).
-* **Context Awareness (V3 Only):** Remembers what *they* said 5 messages ago so you don't look like a goldfish.
+* **👻 Invisible Integration:** Works on **any** platform (WhatsApp Web, Instagram, Discord, Tinder, etc.) because it uses the system clipboard.
+* **🧠 Context Memory (V3):** Remembers what was said 5 messages ago, so you don't repeat yourself.
+* **🎭 Three Distinct Vibes:**
+    * **Friendly (Alt+1):** Chill, low-pressure, "best friend" energy.
+    * **Flirty (Alt+2):** Confident, charming "Rizz" lines.
+    * **Roast (Alt+3):** Witty comebacks for when you need to clap back.
+* **⚡ Powered by Gemini:** Uses Google's latest `gemini-1.5-flash` or `gemini-2.5-flash` models for speed and creativity.
 
 ---
 
-## 🛠️ Prerequisites
+## 🛠️ Installation & Setup
 
-* **Python 3.10+**
-* **Google Gemini API Key** (Get it free at [Google AI Studio](https://aistudio.google.com/))
-* **OS:** Windows 10/11 (Recommended) or Linux/Mac (Requires `sudo`)
+### 1. Prerequisites
+* Python 3.10 or higher installed.
+* A Google Cloud Project or AI Studio account with a **Gemini API Key** (Get it free [here](https://aistudio.google.com/)).
 
----
+### 2. Clone the Repository
+```bash
+git clone [https://github.com/sera1i/genzAi.git](https://github.com/sera1i/genzAi.git)
+cd genzAi
+````
 
-## 📦 Installation
+### 3\. Create a Virtual Environment (Recommended)
 
-1.  **Clone or Download this repository** to your local machine.
+This keeps your system clean.
 
-2.  **Create a Virtual Environment** (Keeps your PC clean):
-    ```powershell
-    # Windows PowerShell
-    python -m venv venv_win
-    .\venv_win\Scripts\activate
-    ```
-    *(If you get a permission error, run: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`)*
-
-3.  **Install Dependencies:**
-    ```bash
-    pip install google-genai pyperclip keyboard colorama
-    ```
-
-4.  **Add Your API Key:**
-    Open the python files (`wingman_v3_memory.py`, etc.) and paste your key into the `API_KEY` variable:
-    ```python
-    API_KEY = "AIzaSyD......"
-    ```
-
----
-
-## 🎮 How to Use (Controls)
-
-Run the version you want to use. **Note:** On Windows, run your terminal as **Administrator** so the hotkeys work inside apps like Chrome/WhatsApp.
-
-### **Run Command:**
 ```powershell
-python wingman_v3_memory.py
+# Windows
+python -m venv venv
+.\venv\Scripts\activate
+
+# Linux/Mac
+python3 -m venv venv
+source venv/bin/activate
+```
+
+*(Windows Note: If you get a "Scripts is disabled" error, run: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`)*
+
+### 4\. Install Dependencies
+
+```bash
+pip install google-genai pyperclip keyboard colorama
+```
+
+### 5\. Configure API Key
+
+Open `wingman_v3_memory.py` (or the version you want to use) in your code editor.
+Find the line:
+
+```python
+API_KEY = "PASTE_YOUR_GEMINI_API_KEY_HERE"
+```
+
+Replace the text inside the quotes with your actual API key.
+
+-----
+
+## 🎮 How to Use
+
+**IMPORTANT:** On Windows, you must run your terminal/CMD as **Administrator**. This is required for the script to detect hotkeys while you are using other apps (like Chrome).
+
+1.  **Run the script:**
+    ```powershell
+    python wingman_v3_memory.py
+    ```
+2.  **Go to your chat app** (e.g., WhatsApp Web).
+3.  **Highlight** the message you just received.
+4.  **Copy it** (`Ctrl + C`).
+5.  **Press a Trigger Key:**
+
+| Key Combo | Mode | Description |
+| :--- | :--- | :--- |
+| **`ALT + 1`** | **Friendly** | Casual replies. Good for friends/family. |
+| **`ALT + 2`** | **Flirty** | The "Rizz" button. Bold and charming. |
+| **`ALT + 3`** | **Roast** | Funny, slightly savage comebacks. |
+| **`ALT + 0`** | **RESET** | **Wipes Memory.** Use this when switching to a new person\! |
+
+6.  **Paste** (`Ctrl + V`) the reply and send\!
+
+-----
+
+## ❓ Troubleshooting
+
+| Issue | Cause | Fix |
+| :--- | :--- | :--- |
+| **Script ignores hotkeys** | Windows Security | Run Terminal/VS Code as **Administrator**. |
+| **`429 RESOURCE_EXHAUSTED`** | API Limit | Switch `MODEL_ID` in code to `gemini-1.5-flash`. |
+| **`404 NOT_FOUND`** | Wrong Model Name | Run `python check_models.py` to see available models. |
+| **Clipboard Error** | Linux Missing Libs | Install xclip (`sudo apt install xclip`). |
+
+-----
+
+## ⚠️ Disclaimer
+
+This tool is for educational and entertainment purposes only. The AI generates text based on patterns and does not have real feelings.
+
+  * **Always read the reply before sending.**
+  * The developer is not responsible if the bot accidentally ruins your relationship or starts a text war. 🤷‍♂️
+
+-----
+
+## 🤝 Contributing
+
+Got an idea to make it smarter?
+
+1.  Fork the repo.
+2.  Create a feature branch (`git checkout -b feature/AmazingFeature`).
+3.  Commit your changes.
+4.  Push to the branch.
+5.  Open a Pull Request.
+
+-----
+
+### **Connect**
+
+Created by [Sera1i](https://github.com/sera1i)
+
+```
+```
