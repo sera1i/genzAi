@@ -10,7 +10,7 @@ init(autoreset=True)
 # ==================================================
 # 🔐 CONFIGURATION
 # ==================================================
-API_KEY = "AIzaSyBtxjbdnFY0mJcSA3QStx89oNtGSwg1rNQ"
+API_KEY = "YOUR_GEMINI_API_KEY_HERE"
 
 # Configure Gemini
 genai.configure(api_key=API_KEY)
