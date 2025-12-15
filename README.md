@@ -142,6 +142,3 @@ This tool is for educational and entertainment purposes only. The AI generates t
 ### **Connect**
 
 Created by [Sera1i](https://github.com/sera1i)
-
-```
-```
